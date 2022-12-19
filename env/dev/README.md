@@ -1,5 +1,5 @@
 # ecs-fargate-terraform
-For Crating the infrastucture
+For creating infrastructure
 
 RUN COMMAND | 
 
