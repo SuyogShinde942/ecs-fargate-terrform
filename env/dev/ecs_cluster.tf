@@ -40,7 +40,9 @@ resource "aws_ecs_service" "goservice" {
   launch_type = "FARGATE"
   cluster         = aws_ecs_cluster.cluster.id
   task_definition = aws_ecs_task_definition.service.arn
-  desired_count   = 1
+  desired_count   = 3
+  deployment_maximum_percent = 100
+  deployment_minimum_healthy_percent = 50
   network_configuration {
     subnets = module.vpc.public_subnets
     security_groups = ["${aws_security_group.allow_tls.id}"]
